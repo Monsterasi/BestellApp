@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestell-App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="./img/Logos/favicon.jpg">
+</head>
+<body>
+    <header>
+        <button class="btn" onclick="goHome()">Home</button>
+        <h1>Bestell-App</h1>
+    </header>
+
+    <div id="cart">
+        <h2>🛒 Warenkorb (<span id="cart-count">0</span>)</h2>
+        <div id="cart-items"></div>
+        <p>Lieferkosten: <span id="delivery-fee">2.99</span>€</p>
+        <p>Gesamt: <span id="total-price">0</span>€</p>
+        <button class="btn" onclick="checkout()">Bestellen</button>
+        <button class="clear-cart-btn" onclick="clearCart()">🗑️</button>
+    </div>
+
+    <div class="container">
+        <div id="restaurant-list">
+            <div class="card" onclick="showMenu('Burgerlicious')">
+                <img src="./img/burger_pommes.jpg" class="restaurant-img" alt="Burgerlicious">
+                <img src="./img/Logos/Burger_logo.jpg" class="logo" alt="Logo">
+                <h2>Burgerlicious</h2>
+                <p>Bewertung: ⭐⭐⭐⭐☆ (4.5/5)</p>
+                <p>Leckere Burger mit frischen Zutaten.</p>
+                <p>Lieferkosten: 2.99€</p>
+            </div>
+            <div class="card" onclick="showMenu('Sushi & More')">
+                <img src="./img/sushi.jpg" class="restaurant-img" alt="Sushi & More">
+                <img src="./img/Logos/asia_logo.jpg" class="logo" alt="Logo">
+                <h2>Sushi & More</h2>
+                <p>Bewertung: ⭐⭐⭐⭐⭐ (5/5)</p>
+                <p>Authentisches Sushi aus frischen Zutaten.</p>
+                <p>Lieferkosten: 2.99€</p>
+            </div>
+            <div class="card" onclick="showMenu('Pizza Palace')">
+                <img src="./img/pizza.jpg" class="restaurant-img" alt="Pizza Palace">
+                <img src="./img/Logos/pizza_logo.jpg" class="logo" alt="Logo">
+                <h2>Pizza Palace</h2>
+                <p>Bewertung: ⭐⭐⭐⭐☆ (4.3/5)</p>
+                <p>Köstliche Steinofenpizzen mit hausgemachter Soße.</p>
+                <p>Lieferkosten: 2.99€</p>
+            </div>
+            <div class="card" onclick="showMenu('Sandwi(t)ches')">
+                <img src="./img/Sandwiches.jpg" class="restaurant-img" alt="Sandwi(t)ches">
+                <img src="./img/Logos/sandwitches.png" class="logo" alt="Logo">
+                <h2>Sandwi(t)ches</h2>
+                <p>Bewertung: ⭐⭐⭐⭐☆ (4.2/5)</p>
+                <p>Kreative Sandwiches mit einzigartigen Rezepten.</p>
+                <p>Lieferkosten: 2.99€</p>
+            </div>
+        </div>
+
+        <div id="menu" class="hidden">
+            <h2 id="menu-title"></h2>
+            <div id="menu-items"></div>
+            <button class="btn" onclick="goHome()">Zurück</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bestell-App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
