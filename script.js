@@ -140,4 +140,39 @@ function createCartButton() {
     document.body.appendChild(cartButton);
 }
 
+(function() {
+  
+  function $(id) { return document.getElementById(id); }
+
+  if (typeof window.clearCart === 'undefined') {
+    window.clearCart = function() {
+      const cartItems = $('cart-items');
+      const cartCount = $('cart-count');
+      const totalPrice = $('total-price');
+      if (cartItems) cartItems.innerHTML = '';
+      if (cartCount) cartCount.textContent = '0';
+      if (totalPrice) totalPrice.textContent = '0';
+    };
+  }
+
+  if (typeof window.checkout === 'undefined') {
+    window.checkout = function() {
+     
+      const msg = $('order-message');
+      if (msg) {
+        msg.classList.remove('hidden');
+      
+        setTimeout(function() {
+          msg.classList.add('hidden');
+        }, 3000);
+      }
+    
+      if (typeof window.clearCart === 'function') {
+        window.clearCart();
+      }
+    };
+  }
+
+  })();
+
 createCartButton();
